@@ -6,11 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from generator import generate_unique_email, generate_valid_password
 from locators import *
-
-# Константы
-BASE_URL = "https://stellarburgers.education-services.ru/"
-DEFAULT_TIMEOUT = 10
-DEFAULT_TEST_NAME = "Тестовый Пользователь"
+from constants import BASE_URL, DEFAULT_TIMEOUT, DEFAULT_TEST_NAME
 
 @pytest.fixture
 def browser():
