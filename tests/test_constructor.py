@@ -1,10 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import *
-
-# Константы
-BASE_URL = "https://stellarburgers.education-services.ru/"
-DEFAULT_TIMEOUT = 10
+from constants import BASE_URL, DEFAULT_TIMEOUT
 
 
 def test_switch_to_buns(browser):

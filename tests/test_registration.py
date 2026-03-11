@@ -8,11 +8,7 @@ from generator import (
     generate_email_without_domain
 )
 from locators import *
-
-# Константы
-BASE_URL = "https://stellarburgers.education-services.ru/"
-DEFAULT_TIMEOUT = 10
-USER_TEST_NAME = "Таисия Якубович"
+from constants import BASE_URL, DEFAULT_TIMEOUT, USER_TEST_NAME
 
 
 def test_successful_registration(browser):
