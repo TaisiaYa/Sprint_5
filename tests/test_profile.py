@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import *
@@ -10,13 +11,11 @@ def test_go_to_personal_account(browser, logged_in_user):
     WebDriverWait(browser, DEFAULT_TIMEOUT).until(
         EC.element_to_be_clickable(MAIN_PERSONAL_ACCOUNT_BUTTON)
     ).click()
-    
-    # Проверяем, что открылась страница профиля
-    profile_header = WebDriverWait(browser, DEFAULT_TIMEOUT).until(
-        EC.visibility_of_element_located(PROFILE_HEADER)
-    )
-    assert profile_header.is_displayed(), "Страница профиля не открылась"
 
+    # Проверяем, что открылась страница профиля
+    time.sleep(1)
+    header = browser.find_element(*PROFILE_HEADER)
+    assert header.is_displayed(), "Страница профиля не открылась"
 
 def test_go_to_constructor_from_profile(browser, logged_in_user):
     # Переходим в личный кабинет
